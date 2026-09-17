@@ -1,0 +1,36 @@
+MIT License
+
+Copyright (c) 2026 bag_school contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+注意 / NOTICE
+
+本仓库的界面布局与业务逻辑是对某同学开发的 Android 应用（Flutter release 构建）的
+逆向重建产物，仅用于学习交流。仓库中不包含原始 APK，也不包含其反编译产物。
+
+如原作者对本仓库有异议，请开 issue，维护者会立即处理（下架或补充署名）。
+
+This repository is a reverse-engineering reconstruction of a Flutter app
+developed by a fellow student, intended for study purposes only. The original
+APK and any decompiled artifacts are NOT included. If you are the original
+author and object to this repository, please open an issue and it will be
+taken down.

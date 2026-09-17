@@ -1,0 +1,38 @@
+name: bag_school
+description: 完蛋校园（根据 base.apk 的 Dart AOT 反汇编重建）
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  http: ^1.2.0
+  intl: ^0.19.0
+  # 换头像用（支持 Android/iOS/Web，无需额外权限）
+  image_picker: ^1.1.2
+  # 校园卡二维码
+  qr_flutter: ^4.1.0
+  # 存盘：让改过的姓名/头像/字段重启后还在
+  shared_preferences: ^2.3.2
+  # 下面两个业务代码并未调用；原 APK 的 Dart 快照里存在
+  # sqflite_* / path_provider_* 的代码，说明原 pubspec 声明了它们
+  # （plugin registrant 会让插件变成可达代码，从而不被 tree-shake 掉）。
+  sqflite: ^2.3.3
+  path_provider: ^2.1.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/bottom1.jpg
+    - assets/face.jpg
+    - assets/free.jpg
+    - assets/logo.jpg

@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // 推荐日常用这个：秒级启动，不需要 Android SDK / 模拟器
+      "name": "Chrome (web · 最快)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "deviceId": "chrome",
+      "args": ["--web-renderer", "html"]
+    },
+    {
+      // 最忠实：真 Android 引擎 + 真 libapp.so
+      // 必须先开模拟器：终端跑 .\run_on_pc.ps1 emu
+      // 故意不写 deviceId —— 写死了 simulator-5554 会在模拟器没开时
+      // 直接报 Device "emulator-5554" was not found。不写的话 F5 会弹设备列表。
+      "name": "Android / 真机（先开设备再选这个）",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart"
+    },
+    {
+      // 性能/包体积验证用它（热重载不可用，这正常）
+      "name": "Profile 模式",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "跑测试 (analyze + test)",
+      "request": "launch",
+      "type": "dart",
+      "program": "test/reconstruction_test.dart"
+    }
+  ]
+}

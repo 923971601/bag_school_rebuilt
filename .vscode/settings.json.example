@@ -1,0 +1,41 @@
+{
+  // 把下面两处改成你自己的路径（或者直接删掉，让 VSCode 用 PATH 里的 flutter）
+  "dart.flutterSdkPath": "",
+
+  "dart.env": {
+    // 国内镜像，否则 pub get 容易卡住
+    "PUB_HOSTED_URL": "https://pub.flutter-io.cn",
+    "FLUTTER_STORAGE_BASE_URL": "https://storage.flutter-io.cn"
+    // Gradle 8.3 官方只支持到 Java 20，如果你本机只有 JDK 21，
+    // 请把 JDK 17 的路径填上，否则 flutter build apk 会失败：
+    // "JAVA_HOME": "C:\\path\\to\\jdk-17"
+  },
+
+  "editor.formatOnSave": true,
+  "editor.rulers": [80],
+  "editor.guides.bracketPairs": "active",
+  "files.trimTrailingWhitespace": true,
+
+  "dart.previewFlutterUiGuides": true,
+  "dart.debugExternalPackageLibraries": false,
+  "dart.debugSdkLibraries": false,
+  "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false
+  },
+
+  "files.exclude": {
+    "**/.dart_tool": true,
+    "**/.idea": true,
+    "**/build": true,
+    "**/android/.gradle": true,
+    "**/*.iml": true
+  },
+  "search.exclude": {
+    "**/build": true,
+    "**/.dart_tool": true,
+    "**/pubspec.lock": true
+  }
+}
