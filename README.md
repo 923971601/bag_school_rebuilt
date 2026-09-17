@@ -83,6 +83,49 @@ VSCode 用户：仓库里带了 `.vscode/launch.json`（Chrome / 模拟器 / 真
 
 ---
 
+## 下载 APK（不想自己编译的）
+
+### 方式一：GitHub Releases（推荐）
+
+去 **[Releases](../../releases/latest)** 页面，在 **Assets** 里点 `完蛋校园-*.apk` 下载，
+传到手机上点开安装即可。首次安装需要允许「安装未知来源应用」。
+
+> 国内直连 GitHub 下载可能很慢或中断，慢的话走下面两个方式。
+
+### 方式二：网盘 / 直接发文件
+
+蓝奏云、阿里云盘、百度网盘都行；好友之间最省事的还是**微信 / QQ 直接发文件**。
+
+> 注意：微信会把 `.apk` 改名成 `.apk.1`，对方收到后**要把文件名末尾的 `.1` 删掉**才能安装。
+> （原始 APK 就是这么变成 `base.apk.1(1)` 的，同一个原因。）
+
+### 方式三：自己编译 / Actions 自动编译
+
+见下面的[跑起来](#跑起来)。或者 fork 本仓库，在 **Actions** 页手动触发
+`Build & Release APK`，编译好的 APK 会出现在那次运行的 **Artifacts** 里。
+
+### 发新版本
+
+```bash
+git tag v1.0.1
+git push origin v1.0.1
+```
+
+GitHub Actions 会自动编译并把 APK 挂到新 Release 上
+（配置见 `.github/workflows/release-apk.yml`）。
+
+### 安装说明
+
+| 项目 | 值 |
+|---|---|
+| 最低系统 | Android 5.0（minSdk 21） |
+| CPU 架构 | universal —— arm64-v8a / armeabi-v7a / x86 / x86_64 都带，任何手机都能装 |
+| 权限 | 只有 `INTERNET`（拉随机头像用） |
+| 大小 | 约 22 MB |
+
+> 如果手机上已经装了别人的「完蛋校园」，装这个之前**要先卸载** —— 签名不同
+> （原作者和我用的都是各自机器的 debug key），不能覆盖安装。
+
 ## 目录结构
 
 ```

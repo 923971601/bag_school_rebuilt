@@ -1,0 +1,79 @@
+name: Build & Release APK
+
+# 什么时候触发：
+#   1) 推一个 v 开头的 tag，例如  git tag v1.0.0 && git push origin v1.0.0
+#      → 自动编译并创建一个 Release，把 APK 挂上去
+#   2) 在 Actions 页面手动点 "Run workflow"
+#      → 只编译，产物放在 Artifacts 里（不建 Release）
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # 建 Release 需要
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉代码
+        uses: actions/checkout@v4
+
+      # Gradle 8.3（Flutter 3.24 的模板）官方只支持到 Java 20，必须用 JDK 17
+      - name: 装 JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      # 必须和原 APK / pubspec 要求一致：Flutter 3.24.3 = Dart 3.5.3
+      - name: 装 Flutter 3.24.3
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.24.3
+          channel: stable
+          cache: true
+
+      - name: 拉依赖
+        run: flutter pub get
+
+      - name: 静态检查
+        run: flutter analyze
+
+      - name: 跑测试
+        run: flutter test
+
+      - name: 编译 release APK（universal，四种 CPU 架构都带）
+        run: flutter build apk --release
+
+      # Release 附件用中文名更好认（GitHub 支持中文文件名）
+      - name: 给 APK 改个好认的名字
+        run: |
+          mkdir -p dist
+          cp build/app/outputs/flutter-apk/app-release.apk \
+             "dist/完蛋校园-${GITHUB_REF_NAME:-dev}.apk"
+          ls -lh dist/
+
+      - name: 上传到 Actions Artifacts（手动触发时用这个下载）
+        uses: actions/upload-artifact@v4
+        with:
+          name: apk
+          path: dist/*.apk
+
+      - name: 建 Release 并挂上 APK（只有推 tag 时才执行）
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.apk
+          generate_release_notes: true
+          body: |
+            ## 下载安装
+
+            点下面 Assets 里的 **完蛋校园-*.apk** 下载，传到手机上点开安装。
+
+            首次安装需要允许「安装未知来源应用」。
+
+            > ⚠️ 这只是个整活用的演示 App：余额、请假记录、审批流程全是假的。
+            > 请只用于同学之间玩笑或 UI 学习，不要拿去骗老师。
