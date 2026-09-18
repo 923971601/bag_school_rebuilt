@@ -87,7 +87,7 @@ VSCode 用户：仓库里带了 `.vscode/launch.json`（Chrome / 模拟器 / 真
 
 ### 方式一：GitHub Releases（推荐）
 
-去 **[Releases](../../releases/latest)** 页面，在 **Assets** 里点 `完蛋校园-*.apk` 下载，
+去 **[Releases](https://github.com/923971601/bag_school_rebuilt/releases/latest)** 页面，在 **Assets** 里点 `完蛋校园-*.apk` 下载，
 传到手机上点开安装即可。首次安装需要允许「安装未知来源应用」。
 
 > 国内直连 GitHub 下载可能很慢或中断，慢的话走下面两个方式。
