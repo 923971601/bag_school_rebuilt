@@ -1,0 +1,15 @@
+# 提 issue 之前先看这里
+
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 逆向过程 / 保真度说明（原版哪些功能没实现）
+    url: https://github.com/923971601/bag_school_rebuilt/blob/main/RECONSTRUCTION.md
+    about: 原版 10 项菜单里只有「请假」接通了，其余都是空闭包；想知道哪些是还原的、哪些是新加的，看这份文档。
+
+  - name: 📥 下载 / 安装问题
+    url: https://github.com/923971601/bag_school_rebuilt#%E4%B8%8B%E8%BD%BD-apk%E4%B8%8D%E6%83%B3%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91%E7%9A%84
+    about: 装不上、签名冲突、国内下载慢、微信改名成 .apk.1 —— README 的「下载 APK」一节都写了。
+
+  - name: ⚠️ 原版 APK 的问题 / 版权
+    url: https://github.com/923971601/bag_school_rebuilt/issues/new
+    about: 本项目是逆向学习产物。原版 APK 本身的问题请找原作者；如果你是原作者且不希望它公开，开 issue 说明，会立即处理。

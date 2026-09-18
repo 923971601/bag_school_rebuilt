@@ -1,5 +1,9 @@
 # 完蛋校园 · bag_school
 
+[![CI](https://github.com/923971601/bag_school_rebuilt/actions/workflows/ci.yml/badge.svg)](https://github.com/923971601/bag_school_rebuilt/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/923971601/bag_school_rebuilt)](https://github.com/923971601/bag_school_rebuilt/releases/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 一个 Flutter 写的「校园卡 + 请假」演示 App。
 本仓库的起点是**从一份同学分享的 APK 逆向重建出的 Dart 源码**，之后又在此基础上补了几个原版没做完的功能。
 
